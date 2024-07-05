@@ -22,16 +22,32 @@ public class Player : MonoBehaviour
     public float speed = 2f;
    
     public bool faceRight = true;
+
+    public bool isGround = false;
+
+    public LayerMask whatIsGround;
+
+    public Transform groundCheck;
+
+    public float groundCheckRadius = 0.2f;
+
+    public float jumpForce = 13.5f;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
         animator =GetComponent<Animator>();
+        
+        groundCheck =transform.Find("GroundCheck");
+
+        whatIsGround = LayerMask.GetMask("Ground");
     }
 
     
     void Update()
     {
+      
         moveInput = InputManager.GethorizontalInput();
 
         isInteract = InputManager.GetJInput();
@@ -43,14 +59,19 @@ public class Player : MonoBehaviour
         {
             animator.SetFloat("Move", Mathf.Abs(moveInput));
         }
-        
+
         //如果进入交换面板且场景内物体可交互，则canMove为false，表示人物不可移动和进行动画
 
-        //
+        if (Input.GetButtonDown("Jump") && isGround)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
     }
 
     void FixedUpdate()
     {
+        isGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+       
         if (canmove)
         {
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
@@ -60,6 +81,7 @@ public class Player : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+
 
         MoveToFlip();
     }

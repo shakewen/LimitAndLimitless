@@ -164,8 +164,8 @@
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.0.4\Editor\SkinningModule\HorizontalToggleTools.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.0.4\Editor\SkinningModule\Selection\IBoneSelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.0.4\Editor\SkinningModule\SkinningCache\SkinningEnums.cs" />
-    <Compile Include="Library\PackageCache\com.unity.2d.animation@9.0.4\Editor\SkinningModule\UI\WeightToolbar.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.0.4\Editor\SpriteLib\SpriteLibraryEditor\SpriteLibraryAssetPostprocessor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.2d.animation@9.0.4\Editor\SkinningModule\UI\WeightToolbar.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.0.4\Editor\SpriteLib\SpriteLibraryEditor\UI\EditorWindowElements.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.0.4\Editor\SkinningModule\Selection\SerializableSelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.2d.animation@9.0.4\Editor\SkinningModule\SkinningCache\CharacterPartCacheExtensions.cs" />
