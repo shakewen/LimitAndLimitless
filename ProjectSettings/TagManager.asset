@@ -8,7 +8,9 @@ TagManager:
   - ItemController
   - InteractButton
   - Transparency
-  - Spring
+  - HideItem
+  - MoveItem
+  - RodItem
   layers:
   - Default
   - TransparentFX

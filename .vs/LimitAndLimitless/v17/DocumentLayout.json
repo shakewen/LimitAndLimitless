@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "E:\\UnityProjects\\LimitAndLimitless\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{46735C12-D699-96BB-50A6-F60A60623025}|Assembly-CSharp.csproj|e:\\unityprojects\\limitandlimitless\\assets\\gameobjectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{46735C12-D699-96BB-50A6-F60A60623025}|Assembly-CSharp.csproj|E:\\UnityProjects\\LimitAndLimitless\\assets\\gameobjectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46735C12-D699-96BB-50A6-F60A60623025}|Assembly-CSharp.csproj|solutionrelative:assets\\gameobjectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46735C12-D699-96BB-50A6-F60A60623025}|Assembly-CSharp.csproj|e:\\unityprojects\\limitandlimitless\\assets\\rodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46735C12-D699-96BB-50A6-F60A60623025}|Assembly-CSharp.csproj|solutionrelative:assets\\rodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46735C12-D699-96BB-50A6-F60A60623025}|Assembly-CSharp.csproj|E:\\UnityProjects\\LimitAndLimitless\\assets\\ui_quitapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46735C12-D699-96BB-50A6-F60A60623025}|Assembly-CSharp.csproj|solutionrelative:assets\\ui_quitapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46735C12-D699-96BB-50A6-F60A60623025}|Assembly-CSharp.csproj|E:\\UnityProjects\\LimitAndLimitless\\assets\\ui_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46735C12-D699-96BB-50A6-F60A60623025}|Assembly-CSharp.csproj|solutionrelative:assets\\ui_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{46735C12-D699-96BB-50A6-F60A60623025}|Assembly-CSharp.csproj|E:\\UnityProjects\\LimitAndLimitless\\assets\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,15 +38,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1a46fd64-28d5-0019-8eb3-17a02d419b53}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RodController.cs",
+              "DocumentMoniker": "E:\\UnityProjects\\LimitAndLimitless\\Assets\\RodController.cs",
+              "RelativeDocumentMoniker": "Assets\\RodController.cs",
+              "ToolTip": "E:\\UnityProjects\\LimitAndLimitless\\Assets\\RodController.cs",
+              "RelativeToolTip": "Assets\\RodController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwYAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T16:52:22.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UI_QuitApplication.cs",
+              "DocumentMoniker": "E:\\UnityProjects\\LimitAndLimitless\\Assets\\UI_QuitApplication.cs",
+              "RelativeDocumentMoniker": "Assets\\UI_QuitApplication.cs",
+              "ToolTip": "E:\\UnityProjects\\LimitAndLimitless\\Assets\\UI_QuitApplication.cs",
+              "RelativeToolTip": "Assets\\UI_QuitApplication.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T12:29:34.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UI_Login.cs",
+              "DocumentMoniker": "E:\\UnityProjects\\LimitAndLimitless\\Assets\\UI_Login.cs",
+              "RelativeDocumentMoniker": "Assets\\UI_Login.cs",
+              "ToolTip": "E:\\UnityProjects\\LimitAndLimitless\\Assets\\UI_Login.cs",
+              "RelativeToolTip": "Assets\\UI_Login.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T12:17:53.92Z"
             },
             {
               "$type": "Document",
@@ -44,14 +89,14 @@
               "RelativeDocumentMoniker": "Assets\\GameObjectController.cs",
               "ToolTip": "E:\\UnityProjects\\LimitAndLimitless\\Assets\\GameObjectController.cs",
               "RelativeToolTip": "Assets\\GameObjectController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGEAAAAAAAAA",
+              "ViewState": "AQIAAF4AAAAAAAAAAAA0wHQAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-05T15:29:01.16Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Player.cs",
               "DocumentMoniker": "E:\\UnityProjects\\LimitAndLimitless\\Assets\\Scripts\\Player\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player.cs",
@@ -63,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ItemController.cs",
               "DocumentMoniker": "E:\\UnityProjects\\LimitAndLimitless\\Assets\\Scripts\\ItemController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemController.cs",
@@ -75,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "InputManager.cs",
               "DocumentMoniker": "E:\\UnityProjects\\LimitAndLimitless\\Assets\\Scripts\\InputManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InputManager.cs",
