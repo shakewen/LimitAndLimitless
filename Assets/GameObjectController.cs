@@ -42,28 +42,27 @@ public class GameObjectController : MonoBehaviour
     [SerializeField] Sprite[] sprites;
 
 
+
     void Start()
     {
 
         controller = GameObject.Find("BookShelf");
 
-        if (Floor != null)
-        {
-            Floor = controller.transform.Find("Floor").gameObject;
+       
+            Floor = controller.transform.Find("MoveFloor").gameObject;
             FloorStartPoint = Floor.transform.GetChild(1);
             FloorEndPoint = Floor.transform.GetChild(0);
             FloorStartPoint.parent = null;
             FloorEndPoint.parent = null;
-        }
+       
 
-        if (CombineWall != null)
-        {
-            CombineWall =controller.transform.Find("CombineWall").gameObject;
+        
+            CombineWall =controller.transform.Find("MovingWall").gameObject;
             WallStartPoint= CombineWall.transform.GetChild(1);
             WallEndPoint = CombineWall.transform.GetChild(0);
             WallStartPoint.parent = null;
             WallEndPoint.parent = null;
-        }
+       
 
         for (int i = 0; i < controller.transform.childCount; i++)
         {
@@ -85,7 +84,12 @@ public class GameObjectController : MonoBehaviour
 
             if (obj.CompareTag("RodItem"))
             {
-                if (obj.name == "拉杆左改")
+                if (obj.name == "Rod_Red_Map2")
+                {
+                    obj.transform.GetChild(0).gameObject.SetActive(false);
+                }
+
+                if(obj.name == "Rod_Blue_Map3")
                 {
                     obj.transform.GetChild(0).gameObject.SetActive(false);
                 }
@@ -98,41 +102,58 @@ public class GameObjectController : MonoBehaviour
      void FixedUpdate()
     {
 
-        if (isPressedState)
-        {
+        
             if (Floor != null)
             {
                 if (isMoveFloor)
                 {
+                    if(Floor.transform.position != FloorEndPoint.position)
                     Floor.transform.position = Vector2.MoveTowards(Floor.transform.position, FloorEndPoint.position, Time.deltaTime * 5f);
                 }
                 else
                 {
+                    if (Floor.transform.position != FloorStartPoint.position)
                     Floor.transform.position = Vector2.MoveTowards(Floor.transform.position, FloorStartPoint.position, Time.deltaTime * 5f);
                 }
             }
-        }
+        
 
         
             if (CombineWall != null)
             {
+            
                if (isMoveWall)
                {
-                 if (CombineWall.transform.position != WallEndPoint.position)
-                 {
-                    CombineWall.transform.position = Vector2.MoveTowards(CombineWall.transform.position, WallEndPoint.position, Time.deltaTime * 5f);
-                 }
+
+                if (CombineWall.transform.position != WallEndPoint.position)
+                {
+                    CombineWall.transform.position = Vector2.MoveTowards(CombineWall.transform.position, WallEndPoint.position, Time.deltaTime * 3f);
+                }
+                   
+                 
+                
                     
                }
                else
                {
-                 if(CombineWall.transform.position != WallStartPoint.position)
-                 {
-                    CombineWall.transform.position = Vector2.MoveTowards(CombineWall.transform.position, WallStartPoint.position, Time.deltaTime * 5f);
-                 }
+                 
+                  if(CombineWall.transform.position != WallStartPoint.position)
+                  {
+                    CombineWall.transform.position = Vector2.MoveTowards(CombineWall.transform.position, WallStartPoint.position, Time.deltaTime * 3f);
+                  }
+                    
+                 
+                
+           
+                
                    
                }
             }
+        
+    }
+
+     void Update()
+    {
         
     }
 
@@ -145,30 +166,37 @@ public class GameObjectController : MonoBehaviour
         {
             isRobing = !isRobing;
             //切换图片
-            collision.GetComponent<SpriteRenderer>().sprite = isRobing? sprites[1] : sprites[0];
             
-            if (collision.name == "拉杆红")
+            collision.GetComponent<SpriteRenderer>().sprite = isRobing? sprites[0] : sprites[1];
+            
+            if (collision.name == "Rod_Red_Map2")
             {
+                print(isRobing);
                 //开玻璃门让主角进入下一个房间
                 collision.transform.GetChild(0).gameObject.SetActive(isRobing? true : false);
+                
+                collision.transform.GetChild(1).gameObject.GetComponent<Collider2D>().isTrigger = isRobing ? true : false;
 
             }
 
-            if (collision.name == "拉杆绿")
+            if (collision.name == "Rod_Blue_Map3")
             {
                 //开玻璃门解救动物
                 collision.transform.GetChild(0).gameObject.SetActive(isRobing ? true : false);
+                collision.transform.GetChild(1).gameObject.GetComponent<Collider2D>().isTrigger = isRobing ? true : false;
             }
 
-            if (collision.name == "拉杆黄")
+            if (collision.name == "Rod_Green_Map3")
             {
                 //触发拉杆后板子消失，再次拉杆板子出现
-                collision.transform.GetChild(0).gameObject.SetActive(isRobing ? true : false);
+                collision.transform.GetChild(0).gameObject.SetActive(isRobing ? false : true);
             }
 
-            if (collision.name == "拉杆蓝")
+            //紫色拉杆移动墙壁
+            if (collision.name == "Rod_Purple_Map3")
             {
-                //使用墙壁左右横移
+                
+                //使用墙壁移动
                 isMoveWall=!isMoveWall;
             }
 
@@ -196,25 +224,29 @@ public class GameObjectController : MonoBehaviour
            
                     if (collision.name == "InteractButton_Red")
                     {
+                       //开关门
                         collision.transform.Find("OpenDoor").gameObject.SetActive(isPressedState?true : false);
                         collision.transform.Find("Door").gameObject.SetActive(isPressedState? false : true);
                     }
 
-                    if (collision.name == "InteractButton_Blue")
+                    if (collision.name == "InteractButton_Orange")
                     {
+                        //使木板消失出现
                         collision.transform.Find("floor").gameObject.SetActive(isPressedState? false : true);
                     }
 
-                    if(collision.name == "InteractButton_Green")
+                    if(collision.name == "InteractButton_Pink")
                     {
                         
+                        //木板移动
                        isMoveFloor = true;
 
                         
                     }
 
-                    if(collision.name == "InteractButton_Orange")
+                    if(collision.name == "InteractButton_Purple")
                     {
+                        //木板反向移动
                         isMoveFloor = false;
                         
                     }
@@ -224,7 +256,7 @@ public class GameObjectController : MonoBehaviour
                
             
             }
-
+            //透明化
         if (collision.gameObject.tag == "Transparency")
         {
             isColorState =!isColorState;
